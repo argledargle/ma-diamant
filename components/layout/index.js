@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
+import Header from '../header/index.js' 
 
 export default function Layout ({ children }) {
   return (
@@ -10,6 +11,7 @@ export default function Layout ({ children }) {
         <meta name='description' content='A game of press-your-luck' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <Header/>
       {children}
       <footer className={styles.footer}>
         <a

@@ -6,18 +6,20 @@ function scores ({ scores }) {
       <main className={styles.main}>
         <h1>Top {scores.length} Scores</h1>
         <table className={styles.table}>
-          <tr>
-            <th>Name</th>
-            <th>Score</th>
-          </tr>
-          {scores.map((score, i) => {
-            return (
-              <tr key={i}>
-                <td className={styles.td}>{score.name}</td>
-                <td className={styles.td}>{score.score}</td>
-              </tr>
-            )
-          })}
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+            </tr>
+            {scores.map((score, i) => {
+              return (
+                <tr key={i}>
+                  <td className={styles.td}>{score.name}</td>
+                  <td className={styles.td}>{score.score}</td>
+                </tr>
+              )
+            })}
+          </tbody>
         </table>
       </main>
     </div>

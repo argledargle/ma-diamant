@@ -1,5 +1,16 @@
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import styled from 'styled-components'
+
+const Anchor = styled.a`
+  color: #0070f3;
+  text-decoration: none;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+`
 
 export default function Home () {
   return (
@@ -7,13 +18,15 @@ export default function Home () {
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to Diamant</h1>
 
-        <p className={styles.description}>
-          Get started by clicking on the card below
-        </p>
+        <p className={styles.description}>A game of press-your-luck</p>
 
-        {/* TODO: Put in the card logic here */}
-
-        <Link href='/scores'>Click here to see the high scores</Link>
+        <Link href='/diamant' passHref>
+          <Anchor>Click here to play</Anchor>
+        </Link>
+        <br />
+        <Link href='/scores' passHref>
+          <Anchor>Click here to see the high scores</Anchor>
+        </Link>
       </main>
     </div>
   )
