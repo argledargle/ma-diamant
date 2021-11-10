@@ -1,12 +1,14 @@
-import { countBy, find, some } from 'lodash'
+import { countBy, some } from 'lodash'
 import React, { useReducer, useEffect } from 'react'
 import styled from 'styled-components'
 import Button from '../components/button'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 const StyledP = styled.p`
   padding: 0rem 15rem;
 `
+
 const trapCardTypes = ['snake', 'spider', 'falling rocks', 'lava', 'zombie']
 
 const shuffleDeck = () => {
@@ -126,10 +128,16 @@ export default function Diamant () {
                 You currently have {state.points} points and there are{' '}
                 {state.deck.length} cards left in the deck.
               </p>
-              <p>Do you want to give up? Or continue playing?</p>
-              <Button onClick={() => console.log('Never gonna give you up')}>
-                Give up
-              </Button>
+              <p>Do you want to call it quits? Or continue playing?</p>
+              <Link
+                href={{
+                  pathname: '/submit',
+                  query: { data: state.points }
+                }}
+                passHref
+              >
+                <Button>Give up</Button>
+              </Link>
               <Button onClick={() => handleDrawCard()}>
                 Draw another card
               </Button>
