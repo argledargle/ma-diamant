@@ -1,4 +1,3 @@
 module.exports = {
-  reactStrictMode: false,
-  generateEtags: false
+  reactStrictMode: false
 }
