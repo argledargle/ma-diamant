@@ -1,6 +1,7 @@
 import styles from '../styles/Home.module.css'
 
 function scores ({ scores }) {
+  console.log('scores:', scores)
   return (
     <div className={styles.container}>
       <main className={styles.main}>
